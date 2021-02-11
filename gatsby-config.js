@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "beltechno.by",
-    description: "сайт о компании ",
+    description: "сайт о компании",
     author: "VS",
     keywords: "купить автомобиль, купить электромобиль",
     siteUrl: "https://beltechno.by.by"
