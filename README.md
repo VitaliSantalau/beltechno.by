@@ -1,0 +1,2 @@
+# beltechno.by
+beltechno.by
