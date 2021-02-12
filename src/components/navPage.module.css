@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav > * {
+  margin-right: 2em;
+  color: #ffffff;
+}
+
+.nav > *:hover {
+  color: rgb(60, 240, 70);
+}

@@ -1,0 +1,68 @@
+.nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;  
+}
+
+.vegetables {
+  width: 25vw;
+  height: 35vh;
+  background-image: url("../images/vegetables.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: border-box;
+  background-size: cover;
+  transform: rotate(10deg);
+}
+
+.vegetables:hover {
+  background-image: url("../images/vegetables-hover.png");
+}
+
+.rolls {
+  width: 20vw;
+  height: 30vh;
+  background-image: url("../images/rolls.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: border-box;
+  background-size: cover;
+  transform: rotate(-10deg);
+}
+
+.rolls:hover {
+  background-image: url("../images/rolls-hover.png");
+}
+
+.cups {
+  width: 25vw;
+  height: 35vh;
+  background-image: url("../images/cups.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: border-box;
+  background-size: cover;
+  transform: rotate(5deg);
+}
+
+.cups:hover {
+  background-image: url("../images/cups-hover.png");
+}
+
+.cars {
+  width: 25vw;
+  height: 35vh;
+  background-image: url("../images/cars.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: border-box;
+  background-size: cover;
+}
+
+.cars:hover {
+  background-image: url("../images/cars-hover.png");
+}
+

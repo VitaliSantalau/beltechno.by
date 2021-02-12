@@ -2,7 +2,7 @@ import * as React from "react"
 import style from "./logo.module.css";
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import logo from "../images/logo.png"
+
 
 export default function Logo() {
   const data = useStaticQuery(graphql`
@@ -23,7 +23,6 @@ export default function Logo() {
            fluid={data.file.childImageSharp.fluid}
            alt="this is a logo"
       />
-      <img src={'/logo.png'} alt="Logo" /> 
     </div>
   )
 };

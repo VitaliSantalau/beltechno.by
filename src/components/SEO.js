@@ -26,7 +26,7 @@ export default function SEO({ description, lang, meta, image: metaImage, title, 
     `${site.siteMetadata.siteUrl}${metaImage.src}` : null
   
   const canonical = pathname ? 
-    (pathname === "/" ? site.siteMetadata.siteUrl : `${site.siteMetadata.siteUrl}${pathname}`)
+    ((pathname === "/") ? site.siteMetadata.siteUrl : `${site.siteMetadata.siteUrl}${pathname}`)
      : null
 
     return (

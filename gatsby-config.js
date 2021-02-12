@@ -4,7 +4,7 @@ module.exports = {
     description: "сайт о компании",
     author: "VS",
     keywords: "купить автомобиль, купить электромобиль",
-    siteUrl: "https://beltechno.by.by"
+    siteUrl: "http://beltechno.by"
   },
   plugins: [
     "gatsby-plugin-sharp",
