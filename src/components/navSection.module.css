@@ -3,18 +3,23 @@
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;  
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
 }
 
-.vegetables {
-  width: 25vw;
-  height: 35vh;
-  background-image: url("../images/vegetables.png");
+.vegetables, .rolls, .cups, .cars {
+  width: 20em;
+  height: 18em;
   background-repeat: no-repeat;
   background-position: center;
   background-clip: border-box;
   background-size: cover;
+  margin: 1em;
+}   
+
+.vegetables {
+  background-image: url("../images/vegetables.png"); 
   transform: rotate(10deg);
 }
 
@@ -23,13 +28,7 @@
 }
 
 .rolls {
-  width: 20vw;
-  height: 30vh;
   background-image: url("../images/rolls.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-clip: border-box;
-  background-size: cover;
   transform: rotate(-10deg);
 }
 
@@ -38,13 +37,7 @@
 }
 
 .cups {
-  width: 25vw;
-  height: 35vh;
   background-image: url("../images/cups.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-clip: border-box;
-  background-size: cover;
   transform: rotate(5deg);
 }
 
@@ -53,13 +46,7 @@
 }
 
 .cars {
-  width: 25vw;
-  height: 35vh;
   background-image: url("../images/cars.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-clip: border-box;
-  background-size: cover;
 }
 
 .cars:hover {

@@ -21,4 +21,4 @@ export default function NavSection() {
       </Link>
     </nav>
   )
-};
+}
