@@ -17,14 +17,6 @@
   z-index: -10;
   overflow: hidden;
 }
-/*
-.shield {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, .3);
-  z-index: -1;
-}*/
 
 .main {
   height: 100%;
@@ -55,7 +47,8 @@
   width: 80%;
 }
 
-
-
-
-
+@media only screen and (max-width: 480px) {
+  .main {
+    margin-top: 4em;
+  }
+}
