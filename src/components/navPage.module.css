@@ -14,6 +14,10 @@
   color: rgb(60, 240, 70);
 }
 
+.activeLink {
+  color: rgb(60, 240, 70);
+}
+
 .iconNavPage, .iconNavPageActive  {
   position: fixed;
   right: 1.2em;
