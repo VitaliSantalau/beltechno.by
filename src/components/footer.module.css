@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1%;
     color: #ffffff;
     background-color: rgba(0, 0, 0, .6);
+    overflow-x: hidden;
   }

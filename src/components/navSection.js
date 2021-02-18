@@ -8,18 +8,18 @@ export default function NavSection() {
   return (
     <nav className={style.nav}>
       <div className={style.row}>
-      <Link to="/">
+      <Link to="/rolls">
         <div className={style.rolls}></div>
       </Link>
-      <Link to="/">
+      <Link to="/cars">
         <div className={style.cars}></div>
       </Link>
       </div>
       <div className={style.row}>
-      <Link to="/">
+      <Link to="/cups">
         <div className={style.cups}></div>
       </Link>
-      <Link to="/">
+      <Link to="/vegetables">
         <div className={style.vegetables}></div>
       </Link>
       </div>      

@@ -1,0 +1,41 @@
+.root {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main {
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../images/backRolls.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: border-box;
+    background-size: cover;
+  }
+  
+  .wrapper {
+    position: relative;
+    height: 100%;
+    width: 80%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  
+  
+  @media only screen and (max-width: 480px) {
+    .main {
+      margin-top: 4em;
+    }
+  }

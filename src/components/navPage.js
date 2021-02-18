@@ -24,7 +24,7 @@ export default function NavPage() {
       <Link to="/" activeClassName={style.activeLink}>
         Главная
       </Link>
-      <Link to="/about" activeClassName={style.activeLink}>
+      <Link to="/about/" activeClassName={style.activeLink}>
         О компании
       </Link>
       <Link to="/catalog" activeClassName={style.activeLink}>
@@ -37,38 +37,42 @@ export default function NavPage() {
     <div className={styleIconNavPage} onClick={handleClickIconNavPage}></div>
     <div className={styleOverlayNavPage}>
       <nav className={style.navMobile}>
-        <Link to="/">
-          <div onClick={handleClickIconNavPage}>Главная</div>
-        </Link>
-        <Link to="/about">
-          <div>О компании</div>
-        </Link>
-        <Link to="/catalog">
-          <div>Каталог</div>
-        </Link>
-        <Link to="/contacts">
-          <div>Контакты</div>
-        </Link>
-        <Link to="/">
-          <div className={style.navSection}>
-            Бумага
-          </div>
-        </Link>
-        <Link to="/">
-          <div className={style.navSection}>
-            Автомобили
-          </div>
-        </Link>
-        <Link to="/">
-          <div className={style.navSection}>
-            Посуда
-          </div>
-        </Link>
-        <Link to="/">
-          <div className={style.navSection}>
-            Овощи
-          </div>  
-        </Link>
+        <div className={style.containerNavPage}>
+          <Link to="/">
+            <div onClick={handleClickIconNavPage}>Главная</div>
+          </Link>
+          <Link to="/about">
+            <div onClick={handleClickIconNavPage}>О компании</div>
+          </Link>
+          <Link to="/catalog">
+            <div onClick={handleClickIconNavPage}>Каталог</div>
+          </Link>
+          <Link to="/contacts">
+            <div onClick={handleClickIconNavPage}>Контакты</div>
+          </Link>
+        </div>
+        <div className={style.containerNavSection}>
+          <Link to="/rolls">
+            <div className={style.navSection} onClick={handleClickIconNavPage}>
+              Бумага
+            </div>
+          </Link>
+          <Link to="/cars">
+            <div className={style.navSection} onClick={handleClickIconNavPage}>
+              Автомобили
+            </div>
+          </Link>
+          <Link to="/cups">
+            <div className={style.navSection} onClick={handleClickIconNavPage}>
+              Посуда
+            </div>
+          </Link>
+          <Link to="/vegetables">
+            <div className={style.navSection} onClick={handleClickIconNavPage}>
+              Овощи
+            </div>  
+          </Link>
+        </div>
       </nav>
     </div>
     </>

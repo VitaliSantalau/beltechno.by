@@ -28,7 +28,6 @@ export default function Home() {
         <video className={style.video} loop autoPlay muted>
           <source src={video} type="video/mp4"/>
         </video>
-        <div className={style.shield}></div>
       </div>
     </>
   )
