@@ -26,7 +26,7 @@
     width: 100%;
     flex-grow: 1;
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
     align-items: center;
   }
 
@@ -35,7 +35,7 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin-bottom: 5em;
   }
@@ -53,26 +53,23 @@
     transition: all .5s ease;
     color: #3b3b3b;
     background-color: #ffffff;
-    overflow: visible
-
   }
 
   .containerItem:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 1em rgba(0,0,0, 1);
+    /*box-shadow: 0 0 1em rgba(0,0,0, 1);*/
     z-index: 10;
   }
 
   .containerItem:hover > .containerButtonItem {
     opacity: 1;
-    overflow: visible
+    box-shadow: 0 0 1em rgba(0,0,0, 1);
+    box-shadow: 0 .5em .5em .1em rgba(0,0,0, .7);
   }
 
   .containerItem:hover > .containerButtonItem >
   .containerVisibleArea {
     background-color: #ffffff;
-    box-shadow: 0 .5em .5em .1em rgba(0,0,0, .6);
-    
   }
 
   .containerVisiblePartItem {
@@ -93,7 +90,7 @@
   }
 
   .image {
-    height: 100%;
+    width: 50em;
   }
 
   .containerNameItem {
@@ -124,7 +121,7 @@
     padding: 0 1em;
   }
 
-  .containerDescriptionItem >.containerDescriptionItemLine:first-child {
+  .containerDescriptionItem > .containerDescriptionItemLine:first-child {
     border-bottom: 1px solid #b0b0b0;
     margin-bottom: .5em;
   }
@@ -140,7 +137,6 @@
     align-items: flex-end;
     transition: all .5s ease;
     opacity: 0;
-    
   }
 
   .containerVisibleArea {
@@ -151,7 +147,6 @@
     align-items: center;
     background-color: #ffffff;
     transition: all .5s ease;
-    z-index: 500;
   }
 
   .buttonItem {
@@ -163,17 +158,12 @@
     align-items: center;
     border: 1px solid #b0b0b0;
     border-radius: 3em;
-    
   }
 
   .buttonItem:hover {
     color: #f2f2f2;
     background-color: rgba(0, 0, 0, .6);
   }
-
-
-  
-  
   
   
   @media only screen and (max-width: 480px) {

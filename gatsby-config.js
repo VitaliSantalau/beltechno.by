@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "beltechno.by",
-    description: "сайт о компании",
+    description: "сайт о деятености компании Белтехногрин",
     author: "VS",
     keywords: "купить автомобиль, купить электромобиль",
     siteUrl: "http://beltechno.by"
@@ -48,6 +48,13 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `ffor9iv1ke4m`,
+        accessToken: `MxXPkDH2FzN6Xbcglvc8Bli0D1FwJEoRv4cxMly-cIc`,
+      },
     },
   ],
 }

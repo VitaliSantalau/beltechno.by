@@ -3,17 +3,45 @@ import React from "react"
 import Footer from "../components/footer"
 import Header from "../components/header"
 import SEO from "../components/SEO"
-import { Link } from "gatsby"
-import auto from "../images/auto.jpeg"
+import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 
 
+export const query = graphql`
+  {
+    allContentfulCar {
+      edges {
+        node {
+          id
+          name
+          description1
+          description2
+          value1
+          value2
+          image {
+            fluid(toFormat: AUTO, resizingBehavior: SCALE, cropFocus: CENTER) {
+              aspectRatio
+              base64
+              src
+              sizes
+              srcSet
+              srcSetWebp
+              srcWebp
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 
-export default function Cars() {
+export default function Cars({ data }) {
+  
   return (
     <>
       <SEO 
-        title="Машины"
+        title="Автомобили"
         pathname="/cars"  
       />
       <div className={style.root}>
@@ -21,141 +49,35 @@ export default function Cars() {
         <main className={style.main}>
           <div className={style.wrapper}>
             <div className={style.containerListItems}>
-              <div className={style.containerItem}>
+            {data.allContentfulCar.edges.map(({ node:car }) => (
+              <div key={car.id} className={style.containerItem}>
                 <div className={style.containerVisiblePartItem}>
                   <div className={style.containerImageItem}>
-                    <img src={auto} className={style.image}/>
+                    <Img fluid={car.image.fluid} className={style.image}/>
                   </div>
                   <div className={style.containerNameItem}>
-                    Наименование товара
+                    {car.name}
                   </div>
                   <div className={style.containerDescriptionItem}>
                     <div className={style.containerDescriptionItemLine}>
-                      <span>Первая характеристика</span>
-                      <span>значение</span>
+                      <span>{car.description1}</span>
+                      <span>{car.value1}</span>
                     </div>
                     <div className={style.containerDescriptionItemLine}>
-                      <span>Вторая характеристика</span>
-                      <span>значение</span>
+                      <span>{car.description2}</span>
+                      <span>{car.value2}</span>
                     </div>
                   </div>
                 </div>
                 <div className={style.containerButtonItem}>
                   <div className={style.containerVisibleArea}>
-                    <Link to="/#" className={style.buttonItem}>
+                    <Link to={`/cars/${car.id}`} className={style.buttonItem}>
                       Выбрать этот товар
                     </Link>
                   </div>
                 </div>
               </div>
-              <div className={style.containerItem}>
-                <div className={style.containerVisiblePartItem}>
-                  <div className={style.containerImageItem}>
-                    <img src={auto} className={style.image}/>
-                  </div>
-                  <div className={style.containerNameItem}>
-                    Наименование товара
-                  </div>
-                  <div className={style.containerDescriptionItem}>
-                    <div className={style.containerDescriptionItemLine}>
-                      <span>Первая характеристика</span>
-                      <span>значение</span>
-                    </div>
-                    <div className={style.containerDescriptionItemLine}>
-                      <span>Вторая характеристика</span>
-                      <span>значение</span>
-                    </div>
-                  </div>
-                </div>
-                <div className={style.containerButtonItem}>
-                  <div className={style.containerVisibleArea}>
-                    <Link to="/#" className={style.buttonItem}>
-                      Выбрать этот товар
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className={style.containerItem}>
-                <div className={style.containerVisiblePartItem}>
-                  <div className={style.containerImageItem}>
-                    <img src={auto} className={style.image}/>
-                  </div>
-                  <div className={style.containerNameItem}>
-                    Наименование товара
-                  </div>
-                  <div className={style.containerDescriptionItem}>
-                    <div className={style.containerDescriptionItemLine}>
-                      <span>Первая характеристика</span>
-                      <span>значение</span>
-                    </div>
-                    <div className={style.containerDescriptionItemLine}>
-                      <span>Вторая характеристика</span>
-                      <span>значение</span>
-                    </div>
-                  </div>
-                </div>
-                <div className={style.containerButtonItem}>
-                  <div className={style.containerVisibleArea}>
-                    <Link to="/#" className={style.buttonItem}>
-                      Выбрать этот товар
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className={style.containerItem}>
-                <div className={style.containerVisiblePartItem}>
-                  <div className={style.containerImageItem}>
-                    <img src={auto} className={style.image}/>
-                  </div>
-                  <div className={style.containerNameItem}>
-                    Наименование товара
-                  </div>
-                  <div className={style.containerDescriptionItem}>
-                    <div className={style.containerDescriptionItemLine}>
-                      <span>Первая характеристика</span>
-                      <span>значение</span>
-                    </div>
-                    <div className={style.containerDescriptionItemLine}>
-                      <span>Вторая характеристика</span>
-                      <span>значение</span>
-                    </div>
-                  </div>
-                </div>
-                <div className={style.containerButtonItem}>
-                  <div className={style.containerVisibleArea}>
-                    <Link to="/#" className={style.buttonItem}>
-                      Выбрать этот товар
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className={style.containerItem}>
-                <div className={style.containerVisiblePartItem}>
-                  <div className={style.containerImageItem}>
-                    <img src={auto} className={style.image}/>
-                  </div>
-                  <div className={style.containerNameItem}>
-                    Наименование товара
-                  </div>
-                  <div className={style.containerDescriptionItem}>
-                    <div className={style.containerDescriptionItemLine}>
-                      <span>Первая характеристика</span>
-                      <span>значение</span>
-                    </div>
-                    <div className={style.containerDescriptionItemLine}>
-                      <span>Вторая характеристика</span>
-                      <span>значение</span>
-                    </div>
-                  </div>
-                </div>
-                <div className={style.containerButtonItem}>
-                  <div className={style.containerVisibleArea}>
-                    <Link to="/#" className={style.buttonItem}>
-                      Выбрать этот товар
-                    </Link>
-                  </div>
-                </div>
-              </div>
+            ))}            
             </div>
           </div>
         </main>
