@@ -58,16 +58,23 @@ const ItemCard = ({ data }) => {
         <Header />
         <main className={style.main}>
           <div className={style.wrapper}>
-            <div className={style.mainFrame}>
-              <div className={style.containerMainPhoto}>
-                <img src={auto} className={style.mainImage}/>
-                <img src={auto} className={style.mainImage}/>
-            </div>
-            </div>
-            
-            
-            
-                     
+            <div className={style.slider}>
+              <div className={style.mainFrame}>
+                <div className={style.containerMainImages}>
+                  {item.images.map(image => (
+                    <Img fluid={image.fluid} className={style.mainImage}/>
+                  ))}
+                </div>
+              </div>
+              <div className={style.navSlider}>
+
+              </div>
+              <div className={style.containerSmallImages}>
+                {item.images.map(image => (
+                  <Img fluid={image.fluid} className={style.smallImage}/>
+                ))}
+              </div>
+            </div>        
           </div>
         </main>
         <Footer />
