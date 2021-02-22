@@ -1,0 +1,60 @@
+.root {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.main {
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../images/backCars.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: border-box;
+  background-size: cover;
+}
+  
+.wrapper {
+  height: 100%;
+  width: 80%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-wrap: wrap-reverse;
+}
+
+.containerDescription {
+  
+}
+
+.mainFrame {
+  position: relative;
+  width: 15em;
+  height: 10em;
+  overflow: hidden;
+  border: 1px solid red;
+}
+
+
+.containerMainPhoto {
+  
+  height: 100%;
+  display: flex;
+  
+  
+  
+}
+
+.mainImage {
+  
+        
+  border: 2px solid;
+}

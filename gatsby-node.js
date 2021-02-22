@@ -1,24 +1,31 @@
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-  /*const results = await graphql(`
+  const results = await graphql(`
     {
-      allGroupsJson {
+      allContentfulCar {
         edges {
           node {
-            slug
+            id
           }
         }
       }
-      allProductsJson {
+      allContentfulCup {
         edges {
           node {
-            slug
+            id
           }
         }
       }
-      allProductJson {
+      allContentfulPaper {
         edges {
           node {
-            slug
+            id
+          }
+        }
+      }
+      allContentfulVegetable {
+        edges {
+          node {
+            id
           }
         }
       }
@@ -26,28 +33,35 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
   `)  
  
  
-  results.data.allGroupsJson.edges.forEach(edge => {
+  results.data.allContentfulCar.edges.forEach(edge => {
     createPage({
-      path: `/${edge.node.slug}/`,
-      component: require.resolve("./src/templates/listsubgroups.js"),
-      context: {slug: edge.node.slug},
+      path: `/cars/${edge.node.id}/`,
+      component: require.resolve("./src/template/car.js"),
+      context: {slug: edge.node.id},
     })
   })
 
-  results.data.allProductsJson.edges.forEach(edge => {
+  results.data.allContentfulCup.edges.forEach(edge => {
     createPage({
-      path: `/${edge.node.slug}/`,
-      component: require.resolve("./src/templates/listproducts.js"),
-      context: {slug: edge.node.slug} 
+      path: `/cups/${edge.node.id}/`,
+      component: require.resolve("./src/template/cup.js"),
+      context: {slug: edge.node.id},
     })
   })
 
-  results.data.allProductJson.edges.forEach(edge => {
+  results.data.allContentfulPaper.edges.forEach(edge => {
     createPage({
-      path: `/${edge.node.slug}/`,
-      component: require.resolve("./src/templates/product.js"),
-      context: {slug: edge.node.slug} 
+      path: `/rolls/${edge.node.id}/`,
+      component: require.resolve("./src/template/paper.js"),
+      context: {slug: edge.node.id},
     })
   })
- */   
+
+  results.data.allContentfulVegetable.edges.forEach(edge => {
+    createPage({
+      path: `/vegetables/${edge.node.id}/`,
+      component: require.resolve("./src/template/vegetable.js"),
+      context: {slug: edge.node.id},
+    })
+  })
 }
