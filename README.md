@@ -8,5 +8,9 @@ gatsby-plugin-offline
 gatsby-transformer-sharp 
 gatsby-image
 
+npm install react-slick --save
+
+gatsby-plugin-emotion @emotion/react @emotion/styled
+
 
 `http://localhost:8000/___graphql`
