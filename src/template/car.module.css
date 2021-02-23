@@ -32,53 +32,8 @@
   border: 1px solid red;
 }
 
-.containerDescription {
-  
-}
-
-.slider {
-  width: 40em;
-  height: 30em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2em;
+.containerCarousel {
+  width: 50em;
+  height: 40em;
   border: 1px solid red;
-}
-
-.mainFrame {
-  position: relative;
-  width: 100%;
-  flex-grow: 1;
-  overflow: hidden;
-}
-
-
-.containerMainImages {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  display: flex;
-}
-
-.mainImage {
-  width: 40em;
-  height: 100%;
-}
-
-.navSlider {
-  width: 100%;
-  display: flex;
-  width: 40em;
-}
-
-.containerSmallImages {
-  display: flex;
- 
-}
-
-.smallImage {
-  height: 100%;
-  width: 6em;
 }
