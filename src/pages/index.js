@@ -7,7 +7,6 @@ import video from "../video/video-background.mp4"
 import NavSection from "../components/navSection"
 
 
-
 export default function Home() {
   return (
     <>

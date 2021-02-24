@@ -26,10 +26,56 @@
     width: 100%;
     flex-grow: 1;
     display: flex;
-    justify-content: stretch;
+    flex-direction: column;
     align-items: center;
   }
+
+  .containerHeaderSection {
+    width: 100%;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    color: rgba(0, 0, 0, .7);
+  }
+
+  .title {
+    margin: 3em 0 1em 2em;
+  }
+
+  .containerPhrases {
+    font-size: 1.6em;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .containerPhrases >* {
+    margin-bottom: .5em;
+  }
   
+  .wordAny {
+    align-self: flex-end;
+    font-size: 1.4em;
+    color: rgba(0, 0, 0, .7);
+  }
+
+  .buttonOrder {
+    width: 5em;
+    height: 5em;
+    align-self: flex-end;
+    margin: 1em 20% 1em 0;
+    border: 1px solid;
+    border-radius: 50%;
+    background-color: rgb(60, 240, 70);
+    cursor: pointer;
+  }
+
+  .buttonOrder:hover {
+    color: #f2f2f2;
+    background-color: rgba(0, 0, 0, .7);
+  }
+
+
   .containerListItems {
     width: 100%;
     height: 100%;

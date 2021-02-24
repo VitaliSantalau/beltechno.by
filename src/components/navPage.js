@@ -3,7 +3,6 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 
 
-
 export default function NavPage() {
   const [isActiveIconNavPage, setIsActiveIconNavPage] = useState(false)
   const styleIconNavPage =  isActiveIconNavPage ?
@@ -27,9 +26,6 @@ export default function NavPage() {
       <Link to="/about/" activeClassName={style.activeLink}>
         О компании
       </Link>
-      <Link to="/catalog" activeClassName={style.activeLink}>
-        Каталог
-      </Link>
       <Link to="/contacts" activeClassName={style.activeLink}>
         Контакты
       </Link>
@@ -43,9 +39,6 @@ export default function NavPage() {
           </Link>
           <Link to="/about">
             <div onClick={handleClickIconNavPage}>О компании</div>
-          </Link>
-          <Link to="/catalog">
-            <div onClick={handleClickIconNavPage}>Каталог</div>
           </Link>
           <Link to="/contacts">
             <div onClick={handleClickIconNavPage}>Контакты</div>

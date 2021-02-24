@@ -47,6 +47,18 @@ export default function Rolls({ data }) {
         <Header />
         <main className={style.main}>
           <div className={style.wrapper}>
+            <section className={style.containerHeaderSection}>
+              <h1 className={style.title}>Вся бумага для изготовления упаковки</h1>
+              <div className={style.containerPhrases}>
+                <p>мы готовы поставить для Вас</p>
+                <p className={style.wordAny}>любой</p>
+                <p>объём бумаги</p>
+              </div>
+              <button className={style.buttonOrder}>Заявка</button>
+            </section>
+            <section className={style.containerFilter}>
+
+            </section>
           <div className={style.containerListItems}>
             {data.allContentfulPaper.edges.map(({ node:car }) => (
               <div key={car.id} className={style.containerItem}>
