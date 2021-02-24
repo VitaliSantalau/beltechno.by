@@ -29,11 +29,14 @@
   justify-content: flex-start;
   align-items: flex-end;
   flex-wrap: wrap-reverse;
-  border: 1px solid red;
+ 
 }
 
 .containerCarousel {
-  width: 50em;
-  height: 40em;
-  border: 1px solid red;
+  width: 20em;
+  margin: .5em;
+}
+
+.imageNav:hover {
+  border: 2px solid black;
 }

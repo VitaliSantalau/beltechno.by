@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import SEO from "../components/SEO" 
-import Carousel from "../components/carousel"
+import CarouselHorizNav from "../components/carouselHorizNav"
 
 
 export const query = graphql`
@@ -25,7 +25,7 @@ export const query = graphql`
         }
       }
       images {
-        fluid(toFormat: AUTO, resizingBehavior: SCALE, cropFocus: CENTER) {
+        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 300, maxWidth: 400) {
           aspectRatio
           base64
           src
@@ -39,17 +39,17 @@ export const query = graphql`
   }
 `
 
-/*
-<div className={style.containerMainImages}>
-                  {item.images.map(image => (
-                    <Img fluid={image.fluid} className={style.mainImage}/>
-                  ))}
-                </div>
-*/
+               
 
 const ItemCard = ({ data }) => {
   const item = data.contentfulCar
-
+  const imagesMain =  item.images.map(image => (
+    <Img fluid={image.fluid} className={style.imageMain}/>
+    ))
+  
+  const imagesNav =  item.images.map(image => (
+      <Img fluid={image.fluid} className={style.imageNav}/>
+      ))
   
   return (
     <>
@@ -62,10 +62,15 @@ const ItemCard = ({ data }) => {
         <Header />
         <main className={style.main}>
           <div className={style.wrapper}>
-            <div className={style.containerCarousel}>
-              <Carousel />
+            <div>
+              {item.name}
+              <div>
+                <div>Год выпуска</div>
+              </div>
             </div>
-            
+            <div className={style.containerCarousel}>
+              <CarouselHorizNav imagesMain={imagesMain} imagesNav={imagesNav}/>
+            </div>
           </div>
         </main>
         <Footer />
