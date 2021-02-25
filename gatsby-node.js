@@ -31,8 +31,16 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       }
     } 
   `)  
+
+  results.data.allContentfulPaper.edges.forEach(edge => {
+    createPage({
+      path: `/rolls/${edge.node.id}/`,
+      component: require.resolve("./src/template/roll.js"),
+      context: {slug: edge.node.id},
+    })
+  })
  
- 
+ /*
   results.data.allContentfulCar.edges.forEach(edge => {
     createPage({
       path: `/cars/${edge.node.id}/`,
@@ -49,13 +57,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     })
   })
 
-  results.data.allContentfulPaper.edges.forEach(edge => {
-    createPage({
-      path: `/rolls/${edge.node.id}/`,
-      component: require.resolve("./src/template/paper.js"),
-      context: {slug: edge.node.id},
-    })
-  })
+
 
   results.data.allContentfulVegetable.edges.forEach(edge => {
     createPage({
@@ -63,5 +65,5 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       component: require.resolve("./src/template/vegetable.js"),
       context: {slug: edge.node.id},
     })
-  })
+  })*/
 }
