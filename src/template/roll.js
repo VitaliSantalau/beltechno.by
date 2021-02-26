@@ -1,11 +1,12 @@
-import style from "./car.module.css"
+import style from "./roll.module.css"
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import SEO from "../components/SEO" 
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 export const query = graphql`
@@ -14,7 +15,7 @@ export const query = graphql`
       id
       name
       image {
-        fluid(toFormat: AUTO, resizingBehavior: SCALE, cropFocus: CENTER) {
+        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 300, maxWidth: 400) {
           aspectRatio
           base64
           src
@@ -26,13 +27,12 @@ export const query = graphql`
       }
       density
       purpose {
-        raw
+        purpose
       }
     }
   }
 `
-
-               
+         
 
 const ItemCard = ({ data }) => {
   const item = data.contentfulPaper
@@ -48,15 +48,30 @@ const ItemCard = ({ data }) => {
         <Header />
         <main className={style.main}>
           <div className={style.wrapper}>
-            <div>
-              {item.name}
-              <div>
-              <Img fluid={item.image.fluid} className={style.imageNav}/>
+            <Link to="/rolls/" className={style.containerBack}>
+              <FontAwesomeIcon icon={faLongArrowAltLeft} className={style.arrow}/>
+              <div className={style.text}>Вернуться к списку</div>
+            </Link>
+            <div className={style.containerImageName}>
+              <div className={style.containerImage}>
+                <Img fluid={item.image.fluid} className={style.image}/>
               </div>
-              {item.density}
-              {item.purpose}
+              <div className={style.containerNameDensity}>
+                <div className={style.name}>
+                  <strong>{item.name}</strong>
+                </div>
+                <div className={style.density}>
+                  <p><strong>Плотность:</strong> {item.density}</p>
+                </div>
+              </div>
+              <div className={style.containerPurpose}>
+                <p><strong>Назначение:</strong></p>
+                <div className={style.pusposeText}>
+                  {item.purpose.purpose}
+                </div>
+                
+              </div>
             </div>
-            
           </div>
         </main>
         <Footer />
