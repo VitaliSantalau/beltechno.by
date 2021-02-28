@@ -1,5 +1,5 @@
 import style from "../style/rolls.module.css"
-import React from "react"
+import React, { useState } from "react"
 import Footer from "../components/footer"
 import Header from "../components/header"
 import SEO from "../components/SEO"
@@ -7,6 +7,9 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRecordVinyl } from '@fortawesome/free-solid-svg-icons'
+import FeedbackForm from "../components/feedbackForm"
+
+
 
 export const query = graphql`
   {
@@ -36,6 +39,12 @@ export const query = graphql`
 
 
 export default function Rolls({ data }) {
+  const [isShowFeedbackForm, setIsShowFeedback] = useState(false)
+
+  const handleShowFeedback = () => {
+    isShowFeedbackForm ? setIsShowFeedback(false) : setIsShowFeedback(true)
+  }
+
   return (
     <>
       <SEO 
@@ -53,7 +62,8 @@ export default function Rolls({ data }) {
                 <p className={style.wordAny}>любой</p>
                 <p>объём бумаги</p>
               </div>
-              <button className={style.buttonOrder}>Заявка</button>
+              <button className={style.buttonOrder} onClick={handleShowFeedback}>Заявка</button>
+              { isShowFeedbackForm && <FeedbackForm handleShowFeedback={handleShowFeedback} /> }              
             </section>
           <div className={style.containerListItems}>
             {data.allContentfulPaper.edges.map(({ node:roll }) => (

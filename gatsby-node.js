@@ -39,6 +39,14 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       context: {slug: edge.node.id},
     })
   })
+
+  results.data.allContentfulVegetable.edges.forEach(edge => {
+    createPage({
+      path: `/vegetables/${edge.node.id}/`,
+      component: require.resolve("./src/template/vegetable.js"),
+      context: {slug: edge.node.id},
+    })
+  })
  
  /*
   results.data.allContentfulCar.edges.forEach(edge => {
@@ -57,13 +65,5 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     })
   })
 
-
-
-  results.data.allContentfulVegetable.edges.forEach(edge => {
-    createPage({
-      path: `/vegetables/${edge.node.id}/`,
-      component: require.resolve("./src/template/vegetable.js"),
-      context: {slug: edge.node.id},
-    })
-  })*/
+  */
 }

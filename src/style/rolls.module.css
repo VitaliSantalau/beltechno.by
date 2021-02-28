@@ -30,6 +30,7 @@
   }
 
   .containerHeaderSection {
+    position: relative;
     width: 100%;
     font-size: 1.2em;
     display: flex;
@@ -61,6 +62,9 @@
     width: 5em;
     height: 5em;
     align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     margin: .5em 20% 1em 0;
     border-radius: 50%;
@@ -211,7 +215,6 @@
     position: absolute;
     top: 2em;
     right: 0;
-    width: 30%;
     height: 2em;
     display: flex;
     align-items: center;
@@ -221,15 +224,17 @@
     border-radius: 1em 0 0 1em;
   }
 
-  .containerMarkTrue > .round {
+  .round {
     width: 1em;
     height: 1em;
+    margin-right: .5em;
+  }
+
+  .containerMarkTrue > .round {
     color: rgb(60, 240, 70);    
   }
 
   .containerMarkFalse > .round {
-    width: 1em;
-    height: 1em;
     color: rgba(0, 0, 0, .6);    
   }
   

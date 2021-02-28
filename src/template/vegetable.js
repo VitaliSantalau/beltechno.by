@@ -1,4 +1,4 @@
-import style from "./roll.module.css"
+import style from "./vegetable.module.css"
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
@@ -12,7 +12,7 @@ import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
 
 export const query = graphql`
   query($slug: String!) {
-    contentfulPaper(id: { eq: $slug }) {
+    contentfulVegetable(id: { eq: $slug }) {
       id
       name
       image {
@@ -26,9 +26,8 @@ export const query = graphql`
           srcWebp
         }
       }
-      density
-      purpose {
-        purpose
+      description {
+        description
       }
     }
   }
@@ -36,20 +35,20 @@ export const query = graphql`
          
 
 const ItemCard = ({ data }) => {
-  const item = data.contentfulPaper
+  const item = data.contentfulVegetable
   
   return (
     <>
       <SEO 
         title={item.name} 
         description={`Подробная информация о ${item.name}`} 
-        pathname={`/rolls/${item.id}`}
+        pathname={`/vegetables/${item.id}`}
       />
        <div className={style.root}>
         <Header />
         <main className={style.main}>
           <div className={style.wrapper}>
-            <Link to="/rolls/" className={style.containerBack}>
+            <Link to="/vegetables/" className={style.containerBack}>
               <FontAwesomeIcon icon={faLongArrowAltLeft} className={style.arrow}/>
               <div className={style.text}>Вернуться к списку</div>
             </Link>
@@ -57,21 +56,19 @@ const ItemCard = ({ data }) => {
               <div className={style.containerImage}>
                 <Img fluid={item.image.fluid} className={style.image}/>
               </div>
-              <div className={style.containerNameDensity}>
+              <div className={style.containerName}>
                 <div className={style.name}>
                   <strong>{item.name}</strong>
                 </div>
-                <div className={style.density}>
-                  <p><strong>Плотность:</strong> {item.density}</p>
-                </div>
               </div>
-              <div className={style.containerPurpose}>
-                <p><strong>Назначение:</strong></p>
-                <div className={style.pusposeText}>
-                  {item.purpose.purpose}
-                </div>
-              </div>
+              
             </div>
+            <div className={style.containerDescription}>
+                <p><strong>Описание:</strong></p>
+                <div className={style.descriptionText}>
+                  {item.description.description}
+                </div>
+              </div>
           </div>
         </main>
         <Footer />
