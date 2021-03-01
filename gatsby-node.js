@@ -48,7 +48,6 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     })
   })
  
- /*
   results.data.allContentfulCar.edges.forEach(edge => {
     createPage({
       path: `/cars/${edge.node.id}/`,
@@ -65,5 +64,4 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     })
   })
 
-  */
 }
