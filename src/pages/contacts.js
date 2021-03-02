@@ -10,7 +10,7 @@ export default function Contacts() {
     <>
       <SEO 
         title="Контакты"
-        pathname="/contacts"  
+        pathname="/contacts/"  
       />
       <div className={style.root}>
         <Header />

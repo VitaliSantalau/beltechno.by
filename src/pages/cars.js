@@ -42,7 +42,7 @@ export default function Cars({ data }) {
     <>
       <SEO 
         title="Автомобили"
-        pathname="/cars"  
+        pathname="/cars/"  
       />
       <div className={style.root}>
         <Header />

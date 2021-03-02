@@ -49,7 +49,7 @@ export default function Rolls({ data }) {
     <>
       <SEO 
         title="Бумага"
-        pathname="/rolls"  
+        pathname="/rolls/"  
       />
       <div className={style.root}>
         <Header />

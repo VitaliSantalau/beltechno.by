@@ -49,7 +49,7 @@ export default function Cups({ data }) {
     <>
       <SEO 
         title="Посуда"
-        pathname="/cups"  
+        pathname="/cups/"  
       />
       <div className={style.root}>
         <Header />

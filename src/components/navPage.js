@@ -26,7 +26,7 @@ export default function NavPage() {
       <Link to="/about/" activeClassName={style.activeLink}>
         О компании
       </Link>
-      <Link to="/contacts" activeClassName={style.activeLink}>
+      <Link to="/contacts/" activeClassName={style.activeLink}>
         Контакты
       </Link>
     </nav>
@@ -37,30 +37,30 @@ export default function NavPage() {
           <Link to="/">
             <div onClick={handleClickIconNavPage}>Главная</div>
           </Link>
-          <Link to="/about">
+          <Link to="/about/">
             <div onClick={handleClickIconNavPage}>О компании</div>
           </Link>
-          <Link to="/contacts">
+          <Link to="/contacts/">
             <div onClick={handleClickIconNavPage}>Контакты</div>
           </Link>
         </div>
         <div className={style.containerNavSection}>
-          <Link to="/rolls">
+          <Link to="/rolls/">
             <div className={style.navSection} onClick={handleClickIconNavPage}>
               Бумага
             </div>
           </Link>
-          <Link to="/cars">
+          <Link to="/cars/">
             <div className={style.navSection} onClick={handleClickIconNavPage}>
               Автомобили
             </div>
           </Link>
-          <Link to="/cups">
+          <Link to="/cups/">
             <div className={style.navSection} onClick={handleClickIconNavPage}>
               Посуда
             </div>
           </Link>
-          <Link to="/vegetables">
+          <Link to="/vegetables/">
             <div className={style.navSection} onClick={handleClickIconNavPage}>
               Овощи
             </div>  

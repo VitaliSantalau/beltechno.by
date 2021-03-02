@@ -10,7 +10,7 @@ export default function About() {
     <>
       <SEO 
         title="О компании"
-        pathname="/about"  
+        pathname="/about/"  
       />
       <div className={style.root}>
         <Header />
