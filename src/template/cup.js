@@ -1,4 +1,4 @@
-import style from "./vegetable.module.css"
+import style from "./cup.module.css"
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
@@ -7,6 +7,7 @@ import Footer from "../components/footer"
 import SEO from "../components/SEO" 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
+import CarouselHorizNav from "../components/carouselHorizNav"
 
 
 
@@ -15,7 +16,7 @@ export const query = graphql`
     contentfulCup(id: { eq: $slug }) {
       id
       name
-      image {
+      imageMain {
         fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 300, maxWidth: 400) {
           aspectRatio
           base64
@@ -29,6 +30,17 @@ export const query = graphql`
       description {
         description
       }
+      imagesSlide {
+        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 300, maxWidth: 400) {
+          aspectRatio
+          base64
+          src
+          sizes
+          srcSet
+          srcSetWebp
+          srcWebp
+        }
+      }
     }
   }
 `
@@ -36,6 +48,14 @@ export const query = graphql`
 
 const ItemCard = ({ data }) => {
   const item = data.contentfulCup
+
+  const imagesMainslide =  item.imagesSlide.map(image => (
+    <Img fluid={image.fluid} className={style.imageMain}/>
+    ))
+  
+  const imagesNavSlide =  item.imagesSlide.map(image => (
+      <Img fluid={image.fluid} className={style.imageNav}/>
+      ))
   
   return (
     <>
@@ -53,22 +73,21 @@ const ItemCard = ({ data }) => {
               <div className={style.text}>Вернуться к списку</div>
             </Link>
             <div className={style.containerImageName}>
-              <div className={style.containerImage}>
-                <Img fluid={item.image.fluid} className={style.image}/>
+              <div className={style.containerCarousel}>
+                <CarouselHorizNav imagesMain={imagesMainslide} imagesNav={imagesNavSlide}/>
               </div>
               <div className={style.containerName}>
                 <div className={style.name}>
                   <strong>{item.name}</strong>
                 </div>
               </div>
-              
             </div>
             <div className={style.containerDescription}>
                 <p><strong>Описание:</strong></p>
                 <div className={style.descriptionText}>
                   {item.description.description}
                 </div>
-              </div>
+            </div>
           </div>
         </main>
         <Footer />

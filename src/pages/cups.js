@@ -1,4 +1,4 @@
-import style from "../style/vegetables.module.css"
+import style from "../style/cups.module.css"
 import React, { useState } from "react"
 import Footer from "../components/footer"
 import Header from "../components/header"
@@ -19,7 +19,7 @@ export const query = graphql`
           id
           name
           state
-          image {
+          imageMain {
             fluid(toFormat: AUTO, resizingBehavior: SCALE, cropFocus: CENTER) {
               aspectRatio
               base64
@@ -66,11 +66,11 @@ export default function Cups({ data }) {
               { isShowFeedbackForm && <FeedbackForm handleShowFeedback={handleShowFeedback} /> }              
             </section>
           <div className={style.containerListItems}>
-            {data.allContentfulVegetable.edges.map(({ node: cup }) => (
+            {data.allContentfulCup.edges.map(({ node: cup }) => (
               <Link to={`/cups/${cup.id}`} key={cup.id} className={style.containerItem}>
                 <div className={style.containerVisiblePartItem}>
                   <div className={style.containerImageItem}>
-                    <Img fluid={cup.image.fluid} className={style.image}/>
+                    <Img fluid={cup.imageMain.fluid} className={style.image}/>
                   </div>
                   <div className={style.containerNameItem}>
                     {cup.name}

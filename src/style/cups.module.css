@@ -1,41 +1,246 @@
 .root {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../images/backCups.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: border-box;
+  background-size: cover;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerHeaderSection {
+  position: relative;
+  width: 100%;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  color: rgba(0, 0, 0, .7);
+}
+
+.title {
+  margin: 1em 0 1em 2em;
+}
+
+.containerPhrases {
+  font-size: 1.5em;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerPhrases >* {
+  margin-bottom: .2em;
+}
+
+.wordAny {
+  align-self: flex-end;
+  font-size: 1.5em;
+}
+
+.buttonOrder {
+  width: 5em;
+  height: 5em;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin: .5em 20% 1em 0;
+  border-radius: 50%;
+  background-image: -webkit-linear-gradient(rgb(60, 240, 70) 0%, rgb(20, 90, 30) 100%);
+  background-image: linear-gradient(rgb(60, 240, 70) 0%, rgb(20, 90, 30) 100%);
+  text-shadow: 1px 1px 1px rgba(60, 240, 70, .6);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);   
+  cursor: pointer;
+  animation: pulse 5s linear infinite;
+}
+
+.buttonOrder:hover {
+  color: rgba(0, 0, 0, .6);
+}
+
+.buttonOrder:active{
+  box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.32);
+  background-image: -webkit-linear-gradient(rgb(60, 240, 70) 0%, rgb(15, 80, 25) 100%);
+  background-image: linear-gradient(rgb(60, 240, 70) 0%, rgb(15, 80, 25) 100%);
+}
+
+.buttonOrder, 
+.buttonOrder:active, 
+.buttonOrder:focus {
+  outline: none;
+}
+
+@keyframes pulse
+{
+  50% {
+    transform: scale(1.1);
   }
-  
+}
+
+.containerListItems {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 5em;
+}
+
+.containerItem {
+  position: relative;
+  width: 24em;
+  height: 28em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1em;
+  padding: 1em;
+  transition: all .5s ease;
+  color: #3b3b3b;
+  background-color: #ffffff;
+}
+
+.containerItem:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.containerItem:hover > .containerUnVisiblePartItem {
+  opacity: 1;
+  box-shadow: 0 0 1em rgba(0,0,0, 1);
+  box-shadow: 0 .5em .5em .1em rgba(0,0,0, .7);
+}
+
+.containerItem:hover > .containerUnVisiblePartItem >
+.containerButtonArea {
+  background-color: #ffffff;
+}
+
+.containerVisiblePartItem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.containerImageItem {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  width: 50em;
+}
+
+.containerNameItem {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.containerUnVisiblePartItem {
+  width: 100%;
+  height: 115%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transition: all .5s ease;
+  opacity: 0;
+}
+
+.containerButtonArea {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  transition: all .5s ease;
+}
+
+.buttonItem {
+  width: 70%;
+  height: 70%;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b0b0b0;
+  border-radius: 3em;
+}
+
+.buttonItem:hover {
+  color: #f2f2f2;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.containerMarkTrue, .containerMarkFalse {
+  position: absolute;
+  top: 2em;
+  right: 0;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5em;
+  background-color: #f2f2f2;
+  border-radius: 1em 0 0 1em;
+}
+
+.round {
+  width: 1em;
+  height: 1em;
+  margin-right: .5em;
+}
+
+.containerMarkTrue > .round {
+  color: rgb(60, 240, 70);    
+}
+
+.containerMarkFalse > .round {
+  color: rgba(0, 0, 0, .6);    
+}
+
+
+@media only screen and (max-width: 480px) {
   .main {
-    height: 100%;
-    width: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url("../images/backCups.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-clip: border-box;
-    background-size: cover;
+    margin-top: 4em;
   }
-  
-  .wrapper {
-    position: relative;
-    height: 100%;
-    width: 80%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  
-  
-  
-  @media only screen and (max-width: 480px) {
-    .main {
-      margin-top: 4em;
-    }
-  }
+}
