@@ -1,11 +1,14 @@
 import style from "./car.module.css"
-import React, { Component, useState } from "react"
+import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import SEO from "../components/SEO" 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
 import CarouselHorizNav from "../components/carouselHorizNav"
+
 
 
 export const query = graphql`
@@ -13,8 +16,8 @@ export const query = graphql`
     contentfulCar(id: { eq: $slug }) {
       id
       name
-      image {
-        fluid(toFormat: AUTO, resizingBehavior: SCALE, cropFocus: CENTER) {
+      imageMain {
+        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 300, maxWidth: 400) {
           aspectRatio
           base64
           src
@@ -24,7 +27,10 @@ export const query = graphql`
           srcWebp
         }
       }
-      images {
+      description {
+        description
+      }
+      imagesSlide {
         fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 300, maxWidth: 400) {
           aspectRatio
           base64
@@ -38,16 +44,16 @@ export const query = graphql`
     }
   }
 `
-
-               
+         
 
 const ItemCard = ({ data }) => {
   const item = data.contentfulCar
-  const imagesMain =  item.images.map(image => (
+
+  const imagesMainslide =  item.imagesSlide.map(image => (
     <Img fluid={image.fluid} className={style.imageMain}/>
     ))
   
-  const imagesNav =  item.images.map(image => (
+  const imagesNavSlide =  item.imagesSlide.map(image => (
       <Img fluid={image.fluid} className={style.imageNav}/>
       ))
   
@@ -56,20 +62,31 @@ const ItemCard = ({ data }) => {
       <SEO 
         title={item.name} 
         description={`Подробная информация о ${item.name}`} 
-        pathname={`/cars/${item.id}`}
+        pathname={`/cups/${item.id}`}
       />
        <div className={style.root}>
         <Header />
         <main className={style.main}>
           <div className={style.wrapper}>
-            <div>
-              {item.name}
-              <div>
-                <div>Год выпуска</div>
+            <Link to="/cars/" className={style.containerBack}>
+              <FontAwesomeIcon icon={faLongArrowAltLeft} className={style.arrow}/>
+              <div className={style.text}>Вернуться к списку</div>
+            </Link>
+            <div className={style.containerImageName}>
+              <div className={style.containerCarousel}>
+                <CarouselHorizNav imagesMain={imagesMainslide} imagesNav={imagesNavSlide}/>
+              </div>
+              <div className={style.containerName}>
+                <div className={style.name}>
+                  <strong>{item.name}</strong>
+                </div>
               </div>
             </div>
-            <div className={style.containerCarousel}>
-              <CarouselHorizNav imagesMain={imagesMain} imagesNav={imagesNav}/>
+            <div className={style.containerDescription}>
+                <p><strong>Описание:</strong></p>
+                <div className={style.descriptionText}>
+                  {item.description.description}
+                </div>
             </div>
           </div>
         </main>
