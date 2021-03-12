@@ -38,3 +38,11 @@ beltechno1234567890
 contentful.com
 beltechno.email@gmail.com
 beltechno1234567890
+
+CI/CD
+buddy.works
+beltechno.email@gmail.com
+beltechno1234567890
+
+github token
+1c8566b83b8ac7acb7e9d7d5a76bbf330fd91410
