@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/beltechno.by",
   siteMetadata: {
     title: "beltechno.by",
     description: "сайт о деятености компании Белтехногрин",

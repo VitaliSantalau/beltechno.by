@@ -48,3 +48,10 @@ github token
 993ebafd55090261c714e74b775aa5e028e749cb
 
 /*"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"*/
+"build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo exit 1"
