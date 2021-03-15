@@ -1,9 +1,0 @@
-.footer {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, .6);
-    overflow-x: hidden;
-  }
