@@ -57,4 +57,4 @@ beltechno1234567890
     "test": "echo exit 1"
 
 github token
-    200737a7697ba43abdf4bc96f1a366697ac92583
+   380001cc43e6c55a79cd72cc790d4b6acc06fc39
