@@ -46,3 +46,5 @@ beltechno1234567890
 
 github token
 993ebafd55090261c714e74b775aa5e028e749cb
+
+/*"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"*/
