@@ -3,7 +3,10 @@ import React from "react"
 import Footer from "../components/footer"
 import Header from "../components/header"
 import SEO from "../components/SEO"
-import video from "../video/video-background.mp4"
+import videoMP4 from "../video/video-background.mp4"
+/*import videoOGG from "../video/video-background.ogg"*/
+import videoWEBM from "../video/video-background.webm"
+import poster from "../video/posterVideoHomePage.jpg"
 import NavSection from "../components/navSection"
 
 
@@ -24,8 +27,10 @@ export default function Home() {
           </div>
         </main>
         <Footer />
-        <video className={style.video} loop autoPlay muted>
-          <source src={video} type="video/mp4"/>
+        <video className={style.video} loop autoPlay muted poster={poster}>
+          <source src={videoMP4} type="video/mp4" />
+          
+          <source src={videoWEBM} type="video/webm" />
         </video>
       </div>
     </>

@@ -15,10 +15,10 @@ export default function Phone() {
         <div className={style.faPhoneAlt}>
           <FontAwesomeIcon icon={faPhoneAlt} />
         </div>
-        <a className={style.phone} href="tel:+375293391835" >+375 29 3391835</a>
+        <a className={style.phone} href="tel:+375295723781" >+375 29 5723781</a>
       </div>
       <div className={style.containerMobile}>
-        <a className={style.faPhoneSquareAlt} href="tel:+375293391835">
+        <a className={style.faPhoneSquareAlt} href="tel:+375295723781">
           <FontAwesomeIcon icon={faPhoneSquareAlt} />
         </a>
       </div>

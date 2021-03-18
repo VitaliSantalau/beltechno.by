@@ -9,9 +9,10 @@
   display: block;
   margin-right: .5em;
   text-rendering: auto;
-  animation: pulse 4s linear infinite;
+  color: rgb(60, 240, 70);
+  /*animation: pulse 4s linear infinite;*/
 }
-
+/*
 @keyframes pulse
   {
     0% {
@@ -54,7 +55,7 @@
       transform: scale(0.7);
       opacity: 0;
     }
-  }
+  }*/
 
   .phone {
     animation: changeColor 4s linear infinite;

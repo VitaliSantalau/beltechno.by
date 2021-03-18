@@ -39,10 +39,7 @@ contentful.com
 beltechno.email@gmail.com
 beltechno1234567890
 
-CI/CD
-buddy.works
-beltechno.email@gmail.com
-beltechno1234567890
+
 
 
 
