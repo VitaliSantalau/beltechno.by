@@ -20,13 +20,12 @@
 }
 
 .main {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .wrapper {
@@ -37,11 +36,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../images/back.png");
+  /*background-image: url("../images/back.png");
   background-repeat: no-repeat;
   background-position: center;
   background-clip: border-box;
-  background-size: cover;
+  background-size: cover;*/
 }
 
 .containerNavSection {

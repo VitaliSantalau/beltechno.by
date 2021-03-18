@@ -16,8 +16,8 @@
 }
 
 .vegetables, .rolls, .cups, .cars {
-  width: 22em;
-  height: 18em;  
+  width: 25em;
+  height: 18em; 
   background-repeat: no-repeat;
   background-position: center;
   background-clip: border-box;

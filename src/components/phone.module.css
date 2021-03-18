@@ -8,7 +8,7 @@
 .faPhoneAlt {
   display: block;
   margin-right: .5em;
-  text-rendering: auto;
+  text-rendering: geometricPrecision; 
   color: rgb(60, 240, 70);
   /*animation: pulse 4s linear infinite;*/
 }
@@ -74,11 +74,12 @@
     justify-self: flex-start;
     justify-content: center;
     align-items: center;
-    animation: pulseMobile 4s linear infinite;
+    /*animation: pulseMobile 4s linear infinite;*/
     margin: 0 3em 0 auto;
     display: none;
   }
 
+  /*
   @keyframes pulseMobile
   {
     0% {
@@ -121,7 +122,7 @@
       transform: scale(0.8);
       opacity: 0;
     }
-  }
+  }*/
 
   .faPhoneSquareAlt {
     display: block;
