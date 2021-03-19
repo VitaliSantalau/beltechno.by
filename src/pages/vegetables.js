@@ -1,5 +1,6 @@
-import style from "../style/vegetables.module.css"
-import React, { useState } from "react"
+import style from "../style/section.module.css"
+import styleVegetables from "../style/vegetables.module.css"
+import React from "react"
 import Footer from "../components/footer"
 import Header from "../components/header"
 import SEO from "../components/SEO"
@@ -7,7 +8,6 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRecordVinyl } from '@fortawesome/free-solid-svg-icons'
-import FeedbackForm from "../components/feedbackForm"
 
 
 
@@ -36,24 +36,17 @@ export const query = graphql`
   }
 `
 
-
-
 export default function Vegetables({ data }) {
-  const [isShowFeedbackForm, setIsShowFeedback] = useState(false)
-
-  const handleShowFeedback = () => {
-    isShowFeedbackForm ? setIsShowFeedback(false) : setIsShowFeedback(true)
-  }
 
   return (
     <>
       <SEO 
         title="Овощи"
-        pathname="/vegetables"  
+        pathname="/vegetables/"  
       />
       <div className={style.root}>
         <Header />
-        <main className={style.main}>
+        <main className={styleVegetables.main}>
           <div className={style.wrapper}>
             <section className={style.containerHeaderSection}>
               <h1 className={style.title}>Овощи свежие</h1>
@@ -61,9 +54,7 @@ export default function Vegetables({ data }) {
                 <p>мы готовы поставить для Вас</p>
                 <p className={style.wordAny}>любой</p>
                 <p>ассортимент овощей</p>
-              </div>
-              <button className={style.buttonOrder} onClick={handleShowFeedback}>Заявка</button>
-              { isShowFeedbackForm && <FeedbackForm handleShowFeedback={handleShowFeedback} /> }              
+              </div>              
             </section>
           <div className={style.containerListItems}>
             {data.allContentfulVegetable.edges.map(({ node: vegetable }) => (

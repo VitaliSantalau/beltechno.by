@@ -4,7 +4,6 @@ import Footer from "../components/footer"
 import Header from "../components/header"
 import SEO from "../components/SEO"
 import videoMP4 from "../video/video-background.mp4"
-/*import videoOGG from "../video/video-background.ogg"*/
 import videoWEBM from "../video/video-background.webm"
 import poster from "../video/posterVideoHomePage.jpg"
 import NavSection from "../components/navSection"
@@ -29,7 +28,6 @@ export default function Home() {
         <Footer />
         <video className={style.video} loop autoPlay muted poster={poster}>
           <source src={videoMP4} type="video/mp4" />
-          
           <source src={videoWEBM} type="video/webm" />
         </video>
       </div>

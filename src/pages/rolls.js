@@ -1,5 +1,6 @@
-import style from "../style/rolls.module.css"
-import React, { useState } from "react"
+import style from "../style/section.module.css"
+import styleRolls from "../style/rolls.module.css"
+import React from "react"
 import Footer from "../components/footer"
 import Header from "../components/header"
 import SEO from "../components/SEO"
@@ -7,8 +8,6 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRecordVinyl } from '@fortawesome/free-solid-svg-icons'
-import FeedbackForm from "../components/feedbackForm"
-
 
 
 export const query = graphql`
@@ -36,14 +35,7 @@ export const query = graphql`
   }
 `
 
-
-
 export default function Rolls({ data }) {
-  const [isShowFeedbackForm, setIsShowFeedback] = useState(false)
-
-  const handleShowFeedback = () => {
-    isShowFeedbackForm ? setIsShowFeedback(false) : setIsShowFeedback(true)
-  }
 
   return (
     <>
@@ -53,7 +45,7 @@ export default function Rolls({ data }) {
       />
       <div className={style.root}>
         <Header />
-        <main className={style.main}>
+        <main className={styleRolls.main}>
           <div className={style.wrapper}>
             <section className={style.containerHeaderSection}>
               <h1 className={style.title}>Бумага для изготовления упаковки</h1>
@@ -61,9 +53,7 @@ export default function Rolls({ data }) {
                 <p>мы готовы поставить для Вас</p>
                 <p className={style.wordAny}>любой</p>
                 <p>объём бумаги</p>
-              </div>
-              <button className={style.buttonOrder} onClick={handleShowFeedback}>Заявка</button>
-              { isShowFeedbackForm && <FeedbackForm handleShowFeedback={handleShowFeedback} /> }              
+              </div>           
             </section>
           <div className={style.containerListItems}>
             {data.allContentfulPaper.edges.map(({ node:roll }) => (
