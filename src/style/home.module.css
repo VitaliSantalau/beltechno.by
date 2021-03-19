@@ -44,8 +44,9 @@
 }
 
 .containerNavSection {
+  flex-grow: 1;
   height: 100%;
-  width: 80%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 480px) {

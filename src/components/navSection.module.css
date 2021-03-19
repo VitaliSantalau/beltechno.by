@@ -16,8 +16,8 @@
 }
 
 .vegetables, .rolls, .cups, .cars {
-  width: 25em;
-  height: 18em; 
+  width: 30vw;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-clip: border-box;
@@ -59,5 +59,11 @@
 
 .cars:hover {
   background-image: url("../images/cars-hover.png");
+}
+
+@media only screen and (max-width: 480px) {
+  .vegetables, .rolls, .cups, .cars {
+    width: 70vw;
+  }   
 }
 

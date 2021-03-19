@@ -13,7 +13,7 @@ import NavSection from "../components/navSection"
 export default function Home() {
   return (
     <>
-      <SEO 
+      <SEO  
         title="Главная"
         pathname="/"  
       />
