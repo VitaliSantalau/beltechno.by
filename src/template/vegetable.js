@@ -61,7 +61,6 @@ const ItemCard = ({ data }) => {
                   <strong>{item.name}</strong>
                 </div>
               </div>
-              
             </div>
             <div className={style.containerDescription}>
                 <p><strong>Описание:</strong></p>
