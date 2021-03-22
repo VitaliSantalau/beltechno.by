@@ -7,7 +7,7 @@ import Footer from "../components/footer"
 import SEO from "../components/SEO" 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
-
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 
 export const query = graphql`
@@ -27,13 +27,12 @@ export const query = graphql`
         }
       }
       density
-      purpose {
-        purpose
+      description {
+        raw
       }
     }
   }
 `
-         
 
 const ItemCard = ({ data }) => {
   const item = data.contentfulPaper
@@ -68,7 +67,7 @@ const ItemCard = ({ data }) => {
               <div className={style.containerPurpose}>
                 <p><strong>Назначение:</strong></p>
                 <div className={style.pusposeText}>
-                  {item.purpose.purpose}
+                  {documentToReactComponents(JSON.parse(item.description.raw))}
                 </div>
               </div>
             </div>
@@ -80,4 +79,4 @@ const ItemCard = ({ data }) => {
   )
 }
 
-export default ItemCard;
+export default ItemCard

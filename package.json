@@ -14,6 +14,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/VitaliSantalau/beltechno.by.git"
   },
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",

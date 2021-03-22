@@ -8,7 +8,7 @@ import SEO from "../components/SEO"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
 import CarouselHorizNav from "../components/carouselHorizNav"
-
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 
 export const query = graphql`
@@ -17,7 +17,7 @@ export const query = graphql`
       id
       name
       imageMain {
-        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 300, maxWidth: 400) {
+        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 640, maxWidth: 480) {
           aspectRatio
           base64
           src
@@ -28,10 +28,10 @@ export const query = graphql`
         }
       }
       description {
-        description
+        raw
       }
       imagesSlide {
-        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 300, maxWidth: 400) {
+        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 640, maxWidth: 480) {
           aspectRatio
           base64
           src
@@ -85,7 +85,7 @@ const ItemCard = ({ data }) => {
             <div className={style.containerDescription}>
                 <p><strong>Описание:</strong></p>
                 <div className={style.descriptionText}>
-                  {item.description.description}
+                  {documentToReactComponents(JSON.parse(item.description.raw))}
                 </div>
             </div>
           </div>
