@@ -7,6 +7,7 @@ import Footer from "../components/footer"
 import SEO from "../components/SEO" 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 
 
@@ -16,7 +17,7 @@ export const query = graphql`
       id
       name
       image {
-        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 300, maxWidth: 400) {
+        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 480, maxWidth: 300) {
           aspectRatio
           base64
           src
@@ -27,17 +28,16 @@ export const query = graphql`
         }
       }
       description {
-        description
+        raw
       }
     }
   }
 `
-         
 
 const ItemCard = ({ data }) => {
   const item = data.contentfulVegetable
   
-  return (
+   return (
     <>
       <SEO 
         title={item.name} 
@@ -61,12 +61,11 @@ const ItemCard = ({ data }) => {
                   <strong>{item.name}</strong>
                 </div>
               </div>
-              
             </div>
             <div className={style.containerDescription}>
                 <p><strong>Описание:</strong></p>
                 <div className={style.descriptionText}>
-                  {item.description.description}
+                  {documentToReactComponents(JSON.parse(item.description.raw))}
                 </div>
               </div>
           </div>

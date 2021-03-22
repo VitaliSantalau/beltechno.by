@@ -58,5 +58,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-emotion`,
+    `@contentful/gatsby-transformer-contentful-richtext`
   ],
 }

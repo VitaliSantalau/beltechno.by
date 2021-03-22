@@ -37,22 +37,18 @@ export default function CarouselHorizNav({ imagesMain, imagesNav }) {
           {imagesMain}
         </Slider>
    
-     <Slider
+        <Slider
           asNavFor={state.main}
           ref={slider => (navSlider = slider)}
-          slidesToShow={4}
+          slidesToShow={3}
           swipeToSlide={true}
           focusOnSelect={true}
           lazyLoad={true}
-          arrows={false}
+          /*arrows={false}*/
         >
           {imagesNav}
         </Slider>
-  
-        
-        
-        
-        </>
+      </>
       
   )
 }
