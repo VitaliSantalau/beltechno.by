@@ -1,11 +1,11 @@
 .root {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
   
 .main {
   height: 100%;
@@ -38,7 +38,8 @@
 .arrow {
   font-size: 1.5em;
   margin-right: .5em;
-  color: rgb(60, 240, 70);
+  /*color: rgb(60, 240, 70);*/
+  color: rgba(0, 0, 0, .5)
 }
 
 .text {
@@ -59,7 +60,7 @@
 }
 
 .containerImage {
-  width: 50%;
+  width: 30%;
   margin-bottom: 2em;
 }
 
@@ -68,7 +69,7 @@
 }
 
 .containerNameDensity {
-  max-width: 25em;
+  width: 55%;
   display: flex;
   flex-direction: column;
 }

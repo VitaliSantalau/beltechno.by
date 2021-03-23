@@ -57,7 +57,6 @@ module.exports = {
         accessToken: `MxXPkDH2FzN6Xbcglvc8Bli0D1FwJEoRv4cxMly-cIc`,
       },
     },
-    `gatsby-plugin-emotion`,
     `@contentful/gatsby-transformer-contentful-richtext`
   ],
 }

@@ -16,7 +16,7 @@ export const query = graphql`
       id
       name
       image {
-        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 300, maxWidth: 400) {
+        fluid(toFormat: AUTO, resizingBehavior: THUMB, cropFocus: CENTER, maxHeight: 640, maxWidth: 480) {
           aspectRatio
           base64
           src
