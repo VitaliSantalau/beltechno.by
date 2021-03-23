@@ -1,12 +1,11 @@
 /* https://react-slick.neostack.com/docs/example/as-nav-for */
 
-import style from "./carouselHorizNav.module.css"
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-export default function CarouselHorizNav({ imagesMain, imagesNav }) {
+export default function CarouselHorizNav({ imagesMain, imagesNav, nSlides }) {
   const [state, setState] = useState(
     {
       main: null,
@@ -15,6 +14,8 @@ export default function CarouselHorizNav({ imagesMain, imagesNav }) {
   )
 
   let mainSlider, navSlider
+
+  const viewSliders = () => nSlides <= 4 ? nSlides : 4
 
   useEffect(()=> {
     setState(
@@ -40,11 +41,12 @@ export default function CarouselHorizNav({ imagesMain, imagesNav }) {
         <Slider
           asNavFor={state.main}
           ref={slider => (navSlider = slider)}
-          slidesToShow={3}
+          slidesToShow={viewSliders()}
           swipeToSlide={true}
           focusOnSelect={true}
           lazyLoad={true}
-          /*arrows={false}*/
+          arrows={nSlides>4}
+          centerMode={nSlides <4}
         >
           {imagesNav}
         </Slider>

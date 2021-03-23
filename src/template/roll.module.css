@@ -38,8 +38,8 @@
 .arrow {
   font-size: 1.5em;
   margin-right: .5em;
-  /*color: rgb(60, 240, 70);*/
-  color: rgba(0, 0, 0, .5)
+  color: rgba(0, 0, 0, .5);
+  text-rendering: geometricPrecision; 
 }
 
 .text {
@@ -69,21 +69,21 @@
 }
 
 .containerNameDensity {
-  width: 55%;
+  width: 60%;
   display: flex;
   flex-direction: column;
 }
 
 .name {
   width: 100%;
-  font-size: 2em;
+  font-size: 1.2em;
   display: flex;
   flex-wrap: wrap;
 }
 
 .density {
-  font-size: 1.5em;
-  margin-top: 2em;
+  font-size: 1.1em;
+  margin: 2em 0 1em 0;
 }
 
 .containerPurpose {
@@ -95,14 +95,24 @@
   margin-bottom: .5em;
 }
 
-.pusposeText {
-  text-align: justify;
+.descriptionText {
   line-height: 1.6em;
+  display: flex;
+  flex-direction: column;
+  }
 
-}
+
 
 @media only screen and (max-width: 480px) {
   .main {
     margin-top: 4em;
+  }
+
+  .containerImage {
+    width: 100%;
+  }
+  
+  .containerNameDensity {
+    width: 100%;
   }
 }

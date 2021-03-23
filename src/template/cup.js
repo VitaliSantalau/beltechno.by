@@ -73,12 +73,24 @@ const ItemCard = ({ data }) => {
               <div className={style.text}>Вернуться к списку</div>
             </Link>
             <div className={style.containerImageName}>
+              {item.imagesSlide.length === 1 &&
+                <div className={style.containerImage}>
+                  <Img fluid={item.imageMain.fluid} className={style.image}/>
+                </div>
+              }
+              {item.imagesSlide.length > 1 &&
               <div className={style.containerCarousel}>
-                <CarouselHorizNav imagesMain={imagesMainslide} imagesNav={imagesNavSlide}/>
+                <CarouselHorizNav 
+                  imagesMain={imagesMainslide} 
+                  imagesNav={imagesNavSlide}
+                  nSlides = {item.imagesSlide.length}
+                />
               </div>
+              }
               <div className={style.containerName}>
                 <div className={style.name}>
                   <strong>{item.name}</strong>
+                  
                 </div>
               </div>
             </div>

@@ -36,9 +36,10 @@ margin: 1em 0;
 }
 
 .arrow {
-font-size: 1.5em;
-margin-right: .5em;
-color: rgb(60, 240, 70);
+  font-size: 1.5em;
+  margin-right: .5em;
+  color: rgba(0, 0, 0, .5);
+  text-rendering: geometricPrecision; 
 }
 
 .text {
@@ -50,52 +51,57 @@ color: rgba(0, 0, 0, 1);
 }
 
 .containerImageName {
-width: 100%;
-display: flex;
-align-items: flex-start;
-flex-wrap: wrap;
-margin: 1em 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 1em 0;
 }
 
 .containerImage {
-width: 50%;
-margin-bottom: 2em;
+  width: 30%;
+  margin-bottom: 2em;
 }
 
 .image {
-width: 100%;
-}
-
-.containerName {
-max-width: 25em;
-display: flex;
-flex-direction: column;
-margin-left: 2em;
+  width: 100%;
 }
 
 .containerCarousel {
-  width: 20em;
+  width: 35%;
   margin: .5em;
 }
 
 .imageNav {
   border: 2px solid transparent;
+  min-width: 5em;
+  min-height: 6em;
+  max-width: 5em;
+  max-height: 6em;
 }
 
 .imageNav:hover {
   border: 2px solid black;
 }
 
+.containerName {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
 .name {
-width: 100%;
-font-size: 2em;
-display: flex;
-flex-wrap: wrap;
+  width: 100%;
+  font-size: 1.2em;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .containerDescription {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
 }
 
 .containerDescription > p {
@@ -103,14 +109,21 @@ flex-direction: column;
 }
 
 .descriptionText {
-text-align: justify;
-line-height: 1.6em;
-display: flex;
-flex-direction: column;
+  line-height: 1.6em;
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 480px) {
-.main {
-  margin-top: 4em;
-}
+  .main {
+    margin-top: 4em;
+  }
+
+  .containerImage, .containerCarousel {
+    width: 100%;
+  }
+  
+  .containerName {
+    width: 100%;
+  }
 }

@@ -10,3 +10,9 @@
   background-clip: border-box;
   background-size: auto;
 }
+
+@media only screen and (max-width: 480px) {
+  .main {
+    margin-top: 4em;
+  }
+}

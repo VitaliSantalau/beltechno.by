@@ -1,5 +1,4 @@
-import style from "../style/section.module.css"
-import styleCars from "../style/cars.module.css"
+import style from "../style/cars.module.css"
 import React from "react"
 import Footer from "../components/footer"
 import Header from "../components/header"
@@ -48,7 +47,7 @@ export default function Cups({ data }) {
       />
       <div className={style.root}>
         <Header />
-        <main className={styleCars.main}>
+        <main className={style.main}>
           <div className={style.wrapper}>
             <section className={style.containerHeaderSection}>
               <h1 className={style.title}>Автомобили, а так же электромобили</h1>

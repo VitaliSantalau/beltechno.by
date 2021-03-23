@@ -66,7 +66,7 @@ const ItemCard = ({ data }) => {
               </div>
               <div className={style.containerPurpose}>
                 <p><strong>Назначение:</strong></p>
-                <div className={style.pusposeText}>
+                <div className={style.descriptionText}>
                   {documentToReactComponents(JSON.parse(item.description.raw))}
                 </div>
               </div>
